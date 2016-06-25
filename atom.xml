@@ -4,7 +4,7 @@
   <title><![CDATA[毕业设计公开进度网站]]></title>
   <link href="https://zning.me/GD/atom.xml" rel="self"/>
   <link href="https://zning.me/GD/"/>
-  <updated>2016-06-25T17:52:47+08:00</updated>
+  <updated>2016-06-25T17:58:03+08:00</updated>
   <id>https://zning.me/GD/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -41,10 +41,18 @@
 
 <ol>
 <li>心率与相关疾病的联系（需要医学支持）</li>
-<li></li>
+<li>心率数据分析算法的设计（分析当前心率下的人体状态与健康状态，并通过历史数据的挖掘结果提供合适的预测值）</li>
+<li>心率数据的存储（实时数据存储的数据结构、数据库结构的研究）</li>
+<li>心率数据的传输（通过硬件传输给用户手机中开发的APP，或者在家里的专用配套设备等，再通过互联网传输到心率数据采集系统进行存储）</li>
+<li>心率数据的获取（通过传感器进行采集）</li>
+<li>本设计展示给用户的客户端设计（Android、iOS端在Web+Native下的混合开发，以及PC端平台的客户端设计）</li>
 </ol>
 
 <h4 id="toc_5">难点</h4>
+
+<ol>
+<li>如何对数据进行分析？如何聚类？</li>
+</ol>
 
 ]]></content>
   </entry>
