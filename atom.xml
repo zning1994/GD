@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[毕业设计公开进度网站]]></title>
+  <link href="https://zning.me/GD/atom.xml" rel="self"/>
+  <link href="https://zning.me/GD/"/>
+  <updated>2016-06-25T12:22:33+08:00</updated>
+  <id>https://zning.me/GD/</id>
+  <author>
+    <name><![CDATA[]]></name>
+    
+  </author>
+  <generator uri="http://www.mweb.im">MWeb</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[创建网站咯~]]></title>
+    <link href="https://zning.me/GD/14668285689054.html"/>
+    <updated>2016-06-25T12:22:48+08:00</updated>
+    <id>https://zning.me/GD/14668285689054.html</id>
+    <content type="html"><![CDATA[
+<p>嘿嘿嘿</p>
+
+]]></content>
+  </entry>
+  
+</feed>
