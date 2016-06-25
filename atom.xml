@@ -4,7 +4,7 @@
   <title><![CDATA[毕业设计公开进度网站]]></title>
   <link href="https://zning.me/GD/atom.xml" rel="self"/>
   <link href="https://zning.me/GD/"/>
-  <updated>2016-06-25T12:45:56+08:00</updated>
+  <updated>2016-06-25T17:52:44+08:00</updated>
   <id>https://zning.me/GD/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -12,6 +12,42 @@
   </author>
   <generator uri="http://www.mweb.im">MWeb</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[个人设想的毕业设计思路]]></title>
+    <link href="https://zning.me/GD/14668306559344.html"/>
+    <updated>2016-06-25T12:57:35+08:00</updated>
+    <id>https://zning.me/GD/14668306559344.html</id>
+    <content type="html"><![CDATA[
+<h3 id="toc_0">题目</h3>
+
+<p>基于聚类挖掘分析的心率检测与其在健康领域的应用</p>
+
+<h3 id="toc_1">设想</h3>
+
+<p>心率监测形成的数据进行数据分析，通过数据积累形成一定数据量后，通过经验分析与医疗经验，对心率变化情况作出预测接下来一段时间人体是否健康并提出预警提示。</p>
+
+<h3 id="toc_2">实现成果</h3>
+
+<ol>
+<li>基于聚类挖掘分析的心率数据分析算法</li>
+<li>心率数据采集系统（硬件+传输中介设备+信息采集与存储开放平台）</li>
+<li>心率数据分析系统（对形成的数据）</li>
+</ol>
+
+<h3 id="toc_3">关键点与难点</h3>
+
+<h4 id="toc_4">关键点</h4>
+
+<ol>
+<li>心率与相关疾病的联系（需要医学支持）</li>
+<li></li>
+</ol>
+
+<h4 id="toc_5">难点</h4>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[创建网站咯~]]></title>
