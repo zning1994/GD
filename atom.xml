@@ -4,7 +4,7 @@
   <title><![CDATA[毕业设计公开进度网站]]></title>
   <link href="https://zning.me/GD/atom.xml" rel="self"/>
   <link href="https://zning.me/GD/"/>
-  <updated>2016-11-05T20:58:58+08:00</updated>
+  <updated>2016-11-05T20:59:27+08:00</updated>
   <id>https://zning.me/GD/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -12,6 +12,256 @@
   </author>
   <generator uri="http://www.mweb.im">MWeb</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu 14.04 Spark单机环境搭建与初步学习]]></title>
+    <link href="https://zning.me/GD/14828004915608.html"/>
+    <updated>2016-12-27T09:01:31+08:00</updated>
+    <id>https://zning.me/GD/14828004915608.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">安装与配置 <sup id="fnref1"><a href="#fn1" rel="footnote">1</a></sup></h2>
+
+<p>大数据这个领域是热火朝天，而<a href="http://spark.apache.org/">Apache Spark</a>则是一个炙手可热大数据神器。趁着现在还比较有空，赶紧学习Spark方面的东西。<br/>
+这篇文章主要是记录下在Ubuntu 14.04下搭建Spark单机环境的过程。这个过程主要有四个部分：</p>
+
+<ul>
+<li>安装Java</li>
+<li>安装Scala</li>
+<li>安装Spark</li>
+<li>安装sbt</li>
+</ul>
+
+<h3 id="toc_1">安装Java</h3>
+
+<ul>
+<li><p>下载<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java SE</a>，然后解压</p>
+
+<pre><code># wget http://download.oracle.com/otn-pub/java/jdk/8u112-b15/jdk-8u112-linux-x64.tar.gz?AuthParam=1482801228_c2a115fb9b0cbc9f160e02b5c29212c7
+# mv jdk-8u112-linux-x64.tar.gz\?AuthParam\=1482801228_c2a115fb9b0cbc9f160e02b5c29212c7 jdk-8u112-linux-x64.tar.gz
+# tar -zxvf jdk-8u112-linux-x64.tar.gz -C /opt/
+</code></pre></li>
+<li><p>配置环境变量</p>
+
+<p>Ubuntu的环境变量又好几个地方可以配置，我这里配置的是<code>/etc/profile</code>文件。</p>
+
+<pre><code>export JAVA_HOME=/opt/jdk1.8.0_112
+export JRE_HOME=${JAVA_HOME}/jre
+export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
+export PATH=${JAVA_HOME}/bin:${JRE_HOME}/bin:$PATH
+</code></pre></li>
+<li><p>之后重启服务器，检验Java有没配置成功</p>
+
+<pre><code>$ java -version
+java version &quot;1.8.0_60&quot;
+Java(TM) SE Runtime Environment (build 1.8.0_60-b27)
+Java HotSpot(TM) 64-Bit Server VM (build 25.60-b23, mixed mode)
+$ javac -version
+javac 1.8.0_60
+</code></pre></li>
+</ul>
+
+<h3 id="toc_2">安装Scala</h3>
+
+<p>Scala安装过程和Java的类似，比较简单</p>
+
+<ul>
+<li><p><a href="http://www.scala-lang.org/download/">官网</a>下载压缩包，然后解压</p>
+
+<pre><code># mkdir /opt/scala
+# wget http://downloads.lightbend.com/scala/2.12.1/scala-2.12.1.tgz
+# tar -zxvf scala-2.12.1.tgz -C /opt/scala/
+</code></pre></li>
+<li><p>配置环境变量 <code>/etc/profile</code></p>
+
+<pre><code>export SCALA_HOME=/opt/scala/scala-2.12.1
+export PATH=${SCALA_HOME}/bin:$PATH
+</code></pre></li>
+<li><p>测试一下</p>
+
+<pre><code># scala -version
+Scala code runner version 2.11.7 -- Copyright 2002-2013, LAMP/EPFL
+</code></pre></li>
+</ul>
+
+<h3 id="toc_3">安装Spark</h3>
+
+<ul>
+<li><p><a href="http://spark.apache.org/">官网</a>下载压缩文件。这里我选择的是2.0.2版本的Pre-build for Hadoop2.7 and later. 解压</p>
+
+<pre><code># mkdir /opt/spark
+# wget http://download.nextag.com/apache/spark/spark-2.0.2/spark-2.0.2-bin-hadoop2.7.tgz
+# tar -zxvf spark-2.0.2-bin-hadoop2.7.tgz -C /opt/spark/
+</code></pre></li>
+<li><p>配置环境变量 /etc/profile</p>
+
+<pre><code>export SPARK_HOME=/opt/spark/spark-2.0.2-bin-hadoop2.7
+export PATH=${SPARK_HOME}/bin:$PATH
+</code></pre>
+
+<p>到这里，应该就可以启动spark-shell，跟着Spark官网上的教程来学API了。</p></li>
+</ul>
+
+<h3 id="toc_4">安装sbt</h3>
+
+<p>安装sbt我参考的是这篇文章<a href="http://www.cnblogs.com/wrencai/p/3867898.html">ubuntu14手动安装sbt</a></p>
+
+<ul>
+<li><p><a href="http://www.scala-sbt.org/">官网</a>下载解压</p>
+
+<pre><code># mkdir /opt/scala/
+# wget https://dl.bintray.com/sbt/native-packages/sbt/0.13.13/sbt-0.13.13.tgz
+# tar -zxvf sbt-0.13.13.tgz -C /opt/scala/
+</code></pre></li>
+<li><p>配置环境变量 <code>/etc/profile</code></p>
+
+<pre><code>export SBT_HOME=/opt/scala/sbt
+export PATH=${SBT_HOME}/bin:$PATH
+</code></pre></li>
+<li><p>建立启动sbt的脚本</p>
+
+<pre><code># mkdir /opt/scala/sbt/
+# cd /opt/scala/sbt/
+# touch sbt
+
+# 脚本内容如下，注意sbt-launch.jar的路径
+SBT_OPTS=&quot;-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M&quot;
+java $SBT_OPTS -jar /opt/scala/sbt/bin/sbt-launch.jar &quot;$@&quot;
+</code></pre></li>
+<li><p>修改sbt文件权限</p>
+
+<pre><code># chmod u+x sbt
+</code></pre></li>
+<li><p>测试sbt</p>
+
+<pre><code># sbt sbt-version
+[info] Set current project to kaka (in build file:/home/kaka/)
+[info] 0.13.9
+</code></pre>
+
+<p>第一次执行的时候会下载很多东西，然后因为众所周知的国内网络的原因，这一步会比较慢，也很有可能会失败。可以参考这篇文章<a href="http://segmentfault.com/a/1190000002474507">加速SBT下载依赖库的速度</a>来设置国内的sbt源。</p>
+
+<p>到此为止，Spark的单机环境就搭建完毕，下一步就是认真地学习Spark了。</p></li>
+</ul>
+
+<h2 id="toc_5">初识Spark <sup id="fnref2"><a href="#fn2" rel="footnote">2</a></sup></h2>
+
+<h3 id="toc_6">Spark 终端</h3>
+
+<p>我觉得 Spark 非常亲民的一点是它提供了一个交互式的命令行终端，这样用户就可以快速地测试一些命令和语句，而无需每次都保存代码脚本然后调用执行，这对于 R 和 Python 用户来说是非常顺心的一件事。如果已经将 Spark 的 <code>bin</code> 目录加入到了系统路径，那么在系统命令行里输入 <code>spark-shell</code> 就可以进入 Spark 的交互式终端了。</p>
+
+<p><img src="media/14828004915608/WXuIyFf.png" alt=""/></p>
+
+<p>如果出现了像图中 <code>scala&gt;</code> 这样的提示符，就说明 Spark 安装成功。这里的 <code>scala</code> 指的是 Scala 编程语言。前面说了，Spark 主要使用 Scala 来进行开发，这意味着要最大程度地发挥 Spark 的性能，还需要再多学一门编程语言（Spark 还支持 Java 和 Python 的接口，但 Java 的语法没有 Scala 简洁，Python 的性能没有 Scala 的高）。虽然这需要花费一些额外的时间，但好在 Scala 的语法非常直观，基本上通过例子就可以模仿写出自己的程序来。</p>
+
+<p>如果对 Scala 语言感兴趣，可以参考<a href="http://people.cis.ksu.edu/%7Eschmidt/705a/Scala/scala_tutorial.pdf">这份教程</a>来了解其基本的语法。但在这里我们将直接进入正题，用 Spark 来跑一个回归的例子。</p>
+
+<h3 id="toc_7">Spark 例子：回归模型</h3>
+
+<p>Spark 的数据分析功能包含在一个称为 MLlib 的组件当中，顾名思义，这是 Spark 的机器学习库，而回归是它支持的模型之一。为了演示例子，我们首先用 R 生成一组模拟的数据（是不是感觉怪怪的，主要是我还没用熟 Scala）：</p>
+
+<pre><code>set.seed(123)
+n = 1e6
+p = 5
+x = matrix(rnorm(n * p), n)
+b = rnorm(p)
+y = x %*% b + rnorm(n, 1, 3)
+z = data.frame(y, x)
+write.table(z, &quot;reg.txt&quot;, sep = &quot; &quot;, row.names = FALSE, col.names = FALSE)
+
+</code></pre>
+
+<p>我们将数据保存为 <code>reg.txt</code> 文件，它共有一百万行，每一行有6个数，用空格分隔，其中第一个数代表因变量，其余的为自变量。</p>
+
+<p>下面就是一段用 Scala 实现的 Spark 算回归的程序，其中包括了读取数据，拟合回归，计算回归系数，进行模型预测以及计算 R2R2 的过程。将这段程序复制到 Spark 的终端里，就可以迅速查看输出结果，体验 Spark 的基本功能了。</p>
+
+<pre><code>import org.apache.spark.mllib.linalg.Vectors
+import org.apache.spark.mllib.regression.LabeledPoint
+import org.apache.spark.mllib.regression.LinearRegressionWithSGD
+import org.apache.spark.mllib.stat.Statistics
+
+val raw = sc.textFile(&quot;reg.txt&quot;)
+
+val parsed = raw.map({ line =&gt;
+    val split = line.split(&#39; &#39;) // 字符串按空格切分
+    val y = split(0).toDouble   // 第一个数转成Double型，是因变量
+    val x = split.tail.map(_.toDouble) // 其余的转成自变量向量
+    LabeledPoint(y, Vectors.dense(x))  // 把因变量和自变量打包
+}).cache()
+
+println(parsed.count())
+
+val model = new LinearRegressionWithSGD()
+
+model.optimizer.setNumIterations(100)
+model.setIntercept(true)
+
+val tstart = System.currentTimeMillis()
+val res = model.run(parsed)
+val tend = System.currentTimeMillis()
+
+println(&quot;Model training time: &quot; + (tend - tstart) / 1000.0 + &quot; secs&quot;)
+
+println(res.intercept)
+println(res.weights)
+
+val pred = res.predict(parsed.map(_.features))
+
+val r = Statistics.corr(pred, parsed.map(_.label))
+println(&quot;R-square = &quot; + r * r)
+
+</code></pre>
+
+<p>下面我们来解释一下程序中每一部分的含义。开头1到4行的是一系列的 <code>import</code> 语句，目的是使用一些已经封装好的类，与 R 中的 <code>library()</code> 和 Python 的 <code>import</code> 语句类似。另外，相信不少读者立刻就能看出这是 Java 风格的导入语句。事实上，Scala 正是基于 Java 而开发的，因此其语法也大多脱胎于 Java。</p>
+
+<p>第6行是读取数据，并将结果赋值给一个变量 <code>raw</code>。特别需要指出的是，这条语句实际上并没有开始读取文件，而只是建立了数据与程序之间的一种连接。这一点是与 R 中 <code>read.table()</code> 最大的不同。</p>
+
+<p>第8到第13行其实包含了两条操作，第一是调用了 <code>raw</code> 对象的 <code>map()</code> 方法，之后连着的是 <code>cache()</code>方法。<code>map()</code> 相当于 R 中的 <code>apply()</code>，意思是对读进来文件的每一行进行一次变换，然后将结果返回，组成一个新的向量。之所以需要这么做，是因为 Spark 读取文本文件时把每一行当作了一个字符串，因此我们需要从这个字符串中解析出我们需要的数据来。语句中被大括号包括的部分其实就是定义了这样一个变换函数，其输入是参数 <code>line</code>，代表传入函数的那个字符串，而输出是一个 <code>LabeledPoint</code> 对象，它是 MLlib 中定义的一个数据结构，用来代表一个因变量-自变量的配对观测。<code>map()</code> 方法返回的结果，就是一个长度为一百万，每个元素为 <code>LabeledPoint</code> 类型的向量。</p>
+
+<p>接下来的 <code>cache()</code> 方法是 Spark 非常独到的一个操作，它是为了告诉 Spark，只要内存足够（限额可以通过 Spark 中的配置文件设置），就将数据放到内存里，以加快后续程序的运算速度。如果内存放不下，就依然保存到硬盘中。这样的好处在于，一方面避免了 R 把所有对象都往内存放的操作，另一方面避免了 Hadoop 这种重度依赖硬盘，以至于效率低下的情形。</p>
+
+<p>而有趣的是，执行完这一句后，数据其实还没有进行真正的读取。这是因为 Spark 采用了一种“延迟运行”的机制，意思是数据只有在真正用到的地方才开始运算，其理念就是，“<strong>只要老师不检查作业，我就暂时不写</strong>”。基于这个原因，数据只有到了下面 <code>parsed.count()</code> 这句需要计算样本量时才真正开始进行读取和变换。</p>
+
+<p>接下来的第17到26行就是真正拟合回归模型的时候了。MLlib 里拟合回归采用的是随机梯度下降法（SGD），选用这种算法的原因，一是因为它是一种迭代算法，可以通过设置迭代次数来随时终止计算（当然同时会损失一部分精度），这对于大规模的数据是非常关键的，因为通常在这些场合下我们不要求结果非常精确，但却希望计算能在规定的时间里完成。而另一个原因就在于这种算法可以比较容易地进行并行，扩展性较好。</p>
+
+<p>第17行中，我们先建立模型对象，然后在19、20行设置最大迭代次数以及告诉模型应该包括截距项。22和24行插入了两句获取时间的函数，是为了评估模型训练（23行）花费的时间。</p>
+
+<p>在第31行中，我们用拟合出的模型对训练集本身进行了预测。<code>parsed.map(_.features)</code> 的目的是取出训练集中的自变量部分，而 <code>predict()</code> 方法返回的结果就是因变量的预测值向量。</p>
+
+<p>最后的第33行，我们利用 MLlib 为我们封装好的 <code>corr()</code> 函数计算了预测值与真实值之间的相关系数（<code>parsed.map(_.label)</code> 与 <code>parsed.map(_.features)</code> 相对，是取出训练集中的因变量），将它平方一下，就是模型的 R2R2 值了。</p>
+
+<h3 id="toc_8">整体印象</h3>
+
+<p>总体感觉，Spark 还是挺好上手的，唯一麻烦的地方大概就是要对 Scala 语言有所了解。不过好在 Spark 也提供了 Python 和 Java 的接口，所以如果只是想尝尝鲜，也完全可以用其他的语言来加以操作。另外一个好消息是，从2015年4月起，Spark 官方已经开始提供 R 语言的接口，大约在2015年夏季发布 Spark 1.4 版本时，R 用户就可以使用原生的 Spark 接口了。</p>
+
+<h3 id="toc_9">学习资源</h3>
+
+<p>下面几个链接我觉得对于 Spark 入门是非常有帮助的：</p>
+
+<ol>
+<li><a href="http://ampcamp.berkeley.edu/big-data-mini-course/index.html">伯克利的 Spark 迷你课程</a></li>
+<li><a href="https://spark.apache.org/docs/latest/quick-start.html">Spark 官方快速入门教程</a></li>
+<li><a href="https://spark.apache.org/docs/latest/mllib-guide.html">MLlib 官方文档</a></li>
+</ol>
+
+<h2 id="toc_10">参考资料与文献</h2>
+
+<div class="footnotes">
+<hr/>
+<ol>
+
+<li id="fn1">
+<p>曾梦想仗剑走天涯. <a href="http://kwangka.github.io/2015/10/15/installspark/">Ubuntu 14.04 Spark单机环境搭建</a>[EB/OL]. <a href="http://kwangka.github.io/2015/10/15/installspark/">http://kwangka.github.io/2015/10/15/installspark/</a>.&nbsp;<a href="#fnref1" rev="footnote">&#8617;</a></p>
+</li>
+
+<li id="fn2">
+<p>怡然轩. <a href="http://yixuan.cos.name/cn/2015/04/spark-beginner-1/">极简 Spark 入门笔记——安装和第一个回归程序</a>[EB/OL]. <a href="http://yixuan.cos.name/cn/2015/04/spark-beginner-1/">http://yixuan.cos.name/cn/2015/04/spark-beginner-1/</a>.&nbsp;<a href="#fnref2" rev="footnote">&#8617;</a></p>
+</li>
+
+</ol>
+</div>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[个人设想的毕业设计思路]]></title>
