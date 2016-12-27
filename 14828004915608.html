@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  Ubuntu 14.04 Spark单机环境搭建与初步学习 - 毕业设计公开进度网站
+  阿里云Ubuntu 14.04 Spark单机环境搭建与初步学习 - 毕业设计公开进度网站
   
   </title>
  <meta name="description" content="">
@@ -53,6 +53,8 @@
         <li><label>思路</label></li>
 
           
+            <li><a title="真实的毕业设计思路" href="14828101562831.html">真实的毕业设计思路</a></li>
+          
             <li><a title="个人设想的毕业设计思路" href="14668306559344.html">个人设想的毕业设计思路</a></li>
           
 
@@ -69,7 +71,7 @@
         <li><label>学习</label></li>
 
           
-            <li><a title="Ubuntu 14.04 Spark单机环境搭建与初步学习" href="14828004915608.html">Ubuntu 14.04 Spark单机环境搭建与初步学习</a></li>
+            <li><a title="阿里云Ubuntu 14.04 Spark单机环境搭建与初步学习" href="14828004915608.html">阿里云Ubuntu 14.04 Spark单机环境搭建与初步学习</a></li>
           
             <li><a title="[Web]北京交大925数据结构复习笔记" href="14783502760965.html">[Web]北京交大925数据结构复习笔记</a></li>
           
@@ -92,6 +94,8 @@
                     
                       <li class="side-title"><span>思路</span></li>
                         
+                          <li><a title="真实的毕业设计思路" href="14828101562831.html">真实的毕业设计思路</a></li>
+                        
                           <li><a title="个人设想的毕业设计思路" href="14668306559344.html">个人设想的毕业设计思路</a></li>
                         
 
@@ -104,7 +108,7 @@
                     
                       <li class="side-title"><span>学习</span></li>
                         
-                          <li><a title="Ubuntu 14.04 Spark单机环境搭建与初步学习" href="14828004915608.html">Ubuntu 14.04 Spark单机环境搭建与初步学习</a></li>
+                          <li><a title="阿里云Ubuntu 14.04 Spark单机环境搭建与初步学习" href="14828004915608.html">阿里云Ubuntu 14.04 Spark单机环境搭建与初步学习</a></li>
                         
                           <li><a title="[Web]北京交大925数据结构复习笔记" href="14783502760965.html">[Web]北京交大925数据结构复习笔记</a></li>
                         
@@ -118,7 +122,11 @@
             <div class="large-9 medium-9 columns">
 
  <div class="markdown-body">
-<h1>Ubuntu 14.04 Spark单机环境搭建与初步学习</h1>
+<h1>阿里云Ubuntu 14.04 Spark单机环境搭建与初步学习</h1>
+
+<p>最近课设需要学习，预先学习了一波。</p>
+
+<span id="more"></span><!-- more -->
 
 <h2 id="toc_0">安装与配置 <sup id="fnref1"><a href="#fn1" rel="footnote">1</a></sup></h2>
 
@@ -140,7 +148,11 @@
 <pre><code># wget http://download.oracle.com/otn-pub/java/jdk/8u112-b15/jdk-8u112-linux-x64.tar.gz?AuthParam=1482801228_c2a115fb9b0cbc9f160e02b5c29212c7
 # mv jdk-8u112-linux-x64.tar.gz\?AuthParam\=1482801228_c2a115fb9b0cbc9f160e02b5c29212c7 jdk-8u112-linux-x64.tar.gz
 # tar -zxvf jdk-8u112-linux-x64.tar.gz -C /opt/
-</code></pre></li>
+</code></pre>
+
+<blockquote>
+<p>这里需要解释下为什么这么做：因为我直接从Java官网上下载的，而官网下载之前需要确认协议，如果直接复制官网下载地址则会出现下载的是个网页的情况。所以只能通过一个带有AuthParam序号的下载地址下载后再修改文件名了。如果有更好的方法的朋友，请联系我告知。谢谢！2016-12-27 12:05:05</p>
+</blockquote></li>
 <li><p>配置环境变量</p>
 
 <p>Ubuntu的环境变量又好几个地方可以配置，我这里配置的是<code>/etc/profile</code>文件。</p>
@@ -212,6 +224,8 @@ export PATH=${SPARK_HOME}/bin:$PATH
 <pre><code># mkdir /opt/scala/
 # wget https://dl.bintray.com/sbt/native-packages/sbt/0.13.13/sbt-0.13.13.tgz
 # tar -zxvf sbt-0.13.13.tgz -C /opt/scala/
+# cd /opt/scala/
+# mv sbt-launcher-packaging-0.13.13 sbt
 </code></pre></li>
 <li><p>配置环境变量 <code>/etc/profile</code></p>
 
@@ -235,16 +249,32 @@ java $SBT_OPTS -jar /opt/scala/sbt/bin/sbt-launch.jar &quot;$@&quot;
 <li><p>测试sbt</p>
 
 <pre><code># sbt sbt-version
+Getting org.scala-sbt sbt 0.13.13 ...
 [info] Set current project to kaka (in build file:/home/kaka/)
-[info] 0.13.9
+[info] 0.13.13
 </code></pre>
 
-<p>第一次执行的时候会下载很多东西，然后因为众所周知的国内网络的原因，这一步会比较慢，也很有可能会失败。可以参考这篇文章<a href="http://segmentfault.com/a/1190000002474507">加速SBT下载依赖库的速度</a>来设置国内的sbt源。</p>
+<p>第一次执行的时候会下载很多东西，然后因为国内你猜到的原因，这一步会比较慢，也很有可能会失败。可以通过如下步骤设置国内的sbt源 <sup id="fnref2"><a href="#fn2" rel="footnote">2</a></sup> <sup id="fnref3"><a href="#fn3" rel="footnote">3</a></sup>：</p>
+
+<pre><code>#vim ~/.sbt/repositories
+</code></pre>
+
+<p>在里面输入如下内容：</p>
+
+<pre><code>[repositories]
+  local
+  oschina:http://maven.oschina.net/content/groups/public/
+  oschina-ivy:http://maven.oschina.net/content/groups/public/, [organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]
+</code></pre>
+
+<blockquote>
+<p>不过这个并没有成功，目前来看还是因为你懂得的原因，正在寻找解决方案。2016-12-27 12:34:43</p>
+</blockquote>
 
 <p>到此为止，Spark的单机环境就搭建完毕，下一步就是认真地学习Spark了。</p></li>
 </ul>
 
-<h2 id="toc_5">初识Spark <sup id="fnref2"><a href="#fn2" rel="footnote">2</a></sup></h2>
+<h2 id="toc_5">初识Spark <sup id="fnref4"><a href="#fn4" rel="footnote">4</a></sup></h2>
 
 <h3 id="toc_6">Spark 终端</h3>
 
@@ -355,7 +385,15 @@ println(&quot;R-square = &quot; + r * r)
 </li>
 
 <li id="fn2">
-<p>怡然轩. <a href="http://yixuan.cos.name/cn/2015/04/spark-beginner-1/">极简 Spark 入门笔记——安装和第一个回归程序</a>[EB/OL]. <a href="http://yixuan.cos.name/cn/2015/04/spark-beginner-1/">http://yixuan.cos.name/cn/2015/04/spark-beginner-1/</a>.&nbsp;<a href="#fnref2" rev="footnote">&#8617;</a></p>
+<p>SegmentFault. <a href="http://segmentfault.com/a/1190000002474507">加速SBT下载依赖库的速度</a>[EB/OL]. <a href="http://segmentfault.com/a/1190000002474507">http://segmentfault.com/a/1190000002474507</a>.&nbsp;<a href="#fnref2" rev="footnote">&#8617;</a></p>
+</li>
+
+<li id="fn3">
+<p>sbt. <a href="http://www.scala-sbt.org/0.13/docs/Proxy-Repositories.html">Proxy Repositories</a>[EB/OL]. <a href="http://www.scala-sbt.org/0.13/docs/Proxy-Repositories.html">http://www.scala-sbt.org/0.13/docs/Proxy-Repositories.html</a>.&nbsp;<a href="#fnref3" rev="footnote">&#8617;</a></p>
+</li>
+
+<li id="fn4">
+<p>怡然轩. <a href="http://yixuan.cos.name/cn/2015/04/spark-beginner-1/">极简 Spark 入门笔记——安装和第一个回归程序</a>[EB/OL]. <a href="http://yixuan.cos.name/cn/2015/04/spark-beginner-1/">http://yixuan.cos.name/cn/2015/04/spark-beginner-1/</a>.&nbsp;<a href="#fnref4" rev="footnote">&#8617;</a></p>
 </li>
 
 </ol>
@@ -376,8 +414,8 @@ println(&quot;R-square = &quot; + r * r)
   <div class="large-6 columns">
 	<div class="text-right" style="padding:15px 0px;">
 		
-	        <a href="14668306559344.html" 
-	        title="Next Post: 个人设想的毕业设计思路">个人设想的毕业设计思路 &raquo;</a>
+	        <a href="14828101562831.html" 
+	        title="Next Post: 真实的毕业设计思路">真实的毕业设计思路 &raquo;</a>
 	    
 	</div>
   </div>
