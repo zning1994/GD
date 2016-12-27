@@ -166,7 +166,7 @@ export JRE_HOME=${JAVA_HOME}/jre
 export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
 export PATH=${JAVA_HOME}/bin:${JRE_HOME}/bin:$PATH
 </code></pre></li>
-<li><p>之后重启服务器，检验Java有没配置成功</p>
+<li><p>之后重启服务器，或者输入<code>source /etc/profile</code>命令，使环境变量生效，检验Java有没配置成功</p>
 
 <pre><code>$ java -version
 java version &quot;1.8.0_60&quot;
@@ -193,7 +193,7 @@ javac 1.8.0_60
 <pre><code>export SCALA_HOME=/opt/scala/scala-2.12.1
 export PATH=${SCALA_HOME}/bin:$PATH
 </code></pre></li>
-<li><p>测试一下</p>
+<li><p>重启服务器，或者输入<code>source /etc/profile</code>命令，使环境变量生效，测试一下</p>
 
 <pre><code># scala -version
 Scala code runner version 2.11.7 -- Copyright 2002-2013, LAMP/EPFL
@@ -215,7 +215,11 @@ Scala code runner version 2.11.7 -- Copyright 2002-2013, LAMP/EPFL
 export PATH=${SPARK_HOME}/bin:$PATH
 </code></pre>
 
-<p>到这里，应该就可以启动spark-shell，跟着Spark官网上的教程来学API了。</p></li>
+<p>重启服务器，或者输入<code>source /etc/profile</code>命令，使环境变量生效。</p>
+
+<p>到这里，应该就可以启动spark-shell，跟着Spark官网上的教程来学API了。</p>
+
+<p><img src="media/14828004915608/14828138714552.jpg" alt=""/></p></li>
 </ul>
 
 <h3 id="toc_4">安装sbt</h3>
@@ -283,8 +287,6 @@ Getting org.scala-sbt sbt 0.13.13 ...
 <h3 id="toc_6">Spark 终端</h3>
 
 <p>我觉得 Spark 非常亲民的一点是它提供了一个交互式的命令行终端，这样用户就可以快速地测试一些命令和语句，而无需每次都保存代码脚本然后调用执行，这对于 R 和 Python 用户来说是非常顺心的一件事。如果已经将 Spark 的 <code>bin</code> 目录加入到了系统路径，那么在系统命令行里输入 <code>spark-shell</code> 就可以进入 Spark 的交互式终端了。</p>
-
-<p><img src="media/14828004915608/WXuIyFf.png" alt=""/></p>
 
 <p>如果出现了像图中 <code>scala&gt;</code> 这样的提示符，就说明 Spark 安装成功。这里的 <code>scala</code> 指的是 Scala 编程语言。前面说了，Spark 主要使用 Scala 来进行开发，这意味着要最大程度地发挥 Spark 的性能，还需要再多学一门编程语言（Spark 还支持 Java 和 Python 的接口，但 Java 的语法没有 Scala 简洁，Python 的性能没有 Scala 的高）。虽然这需要花费一些额外的时间，但好在 Scala 的语法非常直观，基本上通过例子就可以模仿写出自己的程序来。</p>
 
