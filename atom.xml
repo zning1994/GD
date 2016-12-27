@@ -4,7 +4,7 @@
   <title><![CDATA[毕业设计公开进度网站]]></title>
   <link href="https://zning.me/GD/atom.xml" rel="self"/>
   <link href="https://zning.me/GD/"/>
-  <updated>2016-12-27T12:46:04+08:00</updated>
+  <updated>2016-12-27T13:18:41+08:00</updated>
   <id>https://zning.me/GD/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -21,12 +21,58 @@
     <content type="html"><![CDATA[
 <p>最近课设需要学习，预先学习了一波。</p>
 
+<blockquote>
+<p>注意：本文首次撰写于2016-12-27，最近修改时间为2016-12-27，请注意相关程序的可用性与安全性。</p>
+</blockquote>
+
 <span id="more"></span><!-- more -->
 
-<h2 id="toc_0">安装与配置 <sup id="fnref1"><a href="#fn1" rel="footnote">1</a></sup></h2>
+<ul>
+<li>
+<a href="#toc_0">安装与配置</a>
+<ul>
+<li>
+<a href="#toc_1">安装Java</a>
+</li>
+<li>
+<a href="#toc_2">安装Scala</a>
+</li>
+<li>
+<a href="#toc_3">安装Spark</a>
+</li>
+<li>
+<a href="#toc_4">安装sbt</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_5">初识Spark</a>
+<ul>
+<li>
+<a href="#toc_6">Spark 终端</a>
+</li>
+<li>
+<a href="#toc_7">Spark 例子：回归模型</a>
+</li>
+<li>
+<a href="#toc_8">整体印象</a>
+</li>
+<li>
+<a href="#toc_9">学习资源</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_10">参考资料与文献</a>
+</li>
+</ul>
 
-<p>大数据这个领域是热火朝天，而<a href="http://spark.apache.org/">Apache Spark</a>则是一个炙手可热大数据神器。趁着现在还比较有空，赶紧学习Spark方面的东西。<br/>
-这篇文章主要是记录下在Ubuntu 14.04下搭建Spark单机环境的过程。这个过程主要有四个部分：</p>
+
+<h2 id="toc_0">安装与配置</h2>
+
+<p>大数据这个领域是热火朝天，而<a href="http://spark.apache.org/">Apache Spark</a>则是一个炙手可热大数据神器。趁着现在还比较有空，赶紧学习Spark方面的东西。</p>
+
+<p>这一小节主要是记录下在Ubuntu 14.04下搭建Spark单机环境的过程<sup id="fnref1"><a href="#fn1" rel="footnote">1</a></sup>。这个过程主要有四个部分：</p>
 
 <ul>
 <li>安装Java</li>
@@ -171,7 +217,9 @@ Getting org.scala-sbt sbt 0.13.13 ...
 <p>到此为止，Spark的单机环境就搭建完毕，下一步就是认真地学习Spark了。</p></li>
 </ul>
 
-<h2 id="toc_5">初识Spark <sup id="fnref4"><a href="#fn4" rel="footnote">4</a></sup></h2>
+<h2 id="toc_5">初识Spark</h2>
+
+<p>这一小节主要介绍下Spark相关语法与操作指南。<sup id="fnref4"><a href="#fn4" rel="footnote">4</a></sup></p>
 
 <h3 id="toc_6">Spark 终端</h3>
 
@@ -257,11 +305,15 @@ println(&quot;R-square = &quot; + r * r)
 
 <p>最后的第33行，我们利用 MLlib 为我们封装好的 <code>corr()</code> 函数计算了预测值与真实值之间的相关系数（<code>parsed.map(_.label)</code> 与 <code>parsed.map(_.features)</code> 相对，是取出训练集中的因变量），将它平方一下，就是模型的 R2R2 值了。</p>
 
-<h3 id="toc_8">整体印象</h3>
+<!--
 
-<p>总体感觉，Spark 还是挺好上手的，唯一麻烦的地方大概就是要对 Scala 语言有所了解。不过好在 Spark 也提供了 Python 和 Java 的接口，所以如果只是想尝尝鲜，也完全可以用其他的语言来加以操作。另外一个好消息是，从2015年4月起，Spark 官方已经开始提供 R 语言的接口，大约在2015年夏季发布 Spark 1.4 版本时，R 用户就可以使用原生的 Spark 接口了。</p>
+### 整体印象
 
-<h3 id="toc_9">学习资源</h3>
+总体感觉，Spark 还是挺好上手的，唯一麻烦的地方大概就是要对 Scala 语言有所了解。不过好在 Spark 也提供了 Python 和 Java 的接口，所以如果只是想尝尝鲜，也完全可以用其他的语言来加以操作。另外一个好消息是，从2015年4月起，Spark 官方已经开始提供 R 语言的接口，大约在2015年夏季发布 Spark 1.4 版本时，R 用户就可以使用原生的 Spark 接口了。
+
+-->
+
+<h3 id="toc_8">学习资源</h3>
 
 <p>下面几个链接我觉得对于 Spark 入门是非常有帮助的：</p>
 
@@ -271,7 +323,7 @@ println(&quot;R-square = &quot; + r * r)
 <li><a href="https://spark.apache.org/docs/latest/mllib-guide.html">MLlib 官方文档</a></li>
 </ol>
 
-<h2 id="toc_10">参考资料与文献</h2>
+<h2 id="toc_9">参考资料与文献</h2>
 
 <div class="footnotes">
 <hr/>
