@@ -4,7 +4,7 @@
   <title><![CDATA[毕业设计公开进度网站]]></title>
   <link href="https://zning.me/GD/atom.xml" rel="self"/>
   <link href="https://zning.me/GD/"/>
-  <updated>2016-12-27T13:24:30+08:00</updated>
+  <updated>2017-01-10T18:43:38+08:00</updated>
   <id>https://zning.me/GD/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -26,6 +26,8 @@
 <p>为方便同学们对本课程的课外扩展，特此整理了近年来一系列重要的topic，我们给每个topic都提供了一些经典参考论文，以供大家阅读。</p>
 
 <p><strong>Topic</strong></p>
+
+<span id="more"></span><!-- more -->
 
 <ol>
 <li><strong>MapReduce / Hadoop</strong>
