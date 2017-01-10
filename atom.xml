@@ -4,7 +4,7 @@
   <title><![CDATA[毕业设计公开进度网站]]></title>
   <link href="https://zning.me/GD/atom.xml" rel="self"/>
   <link href="https://zning.me/GD/"/>
-  <updated>2016-12-27T13:22:24+08:00</updated>
+  <updated>2016-12-27T13:24:30+08:00</updated>
   <id>https://zning.me/GD/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -12,6 +12,123 @@
   </author>
   <generator uri="http://www.mweb.im">MWeb</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[THU201606X 高级大数据系统（学堂在线）课外阅读资料]]></title>
+    <link href="https://zning.me/GD/14840447285917.html"/>
+    <updated>2017-01-10T18:38:48+08:00</updated>
+    <id>https://zning.me/GD/14840447285917.html</id>
+    <content type="html"><![CDATA[
+<blockquote>
+<p>摘自本课课程公告，以备后用</p>
+</blockquote>
+
+<p>为方便同学们对本课程的课外扩展，特此整理了近年来一系列重要的topic，我们给每个topic都提供了一些经典参考论文，以供大家阅读。</p>
+
+<p><strong>Topic</strong></p>
+
+<ol>
+<li><strong>MapReduce / Hadoop</strong>
+
+<ol>
+<li>Dean, Jeffrey, and Sanjay Ghemawat. &quot;MapReduce: simplified data processing on large clusters.&quot; <em>Communications of the ACM</em> 51.1 (2008): 107-113.</li>
+<li>Dean, Jeffrey, and Sanjay Ghemawat. &quot;MapReduce: a flexible data processing tool.&quot; <em>Communications of the ACM</em> 53.1 (2010): 72-77.</li>
+<li>Isard, Michael, et al. &quot;Dryad: distributed data-parallel programs from sequential building blocks.&quot; <em>ACM SIGOPS Operating Systems Review</em>. Vol. 41. No. 3. ACM, 2007.</li>
+</ol></li>
+<li><strong>In-Memory Processing / Spark</strong>
+
+<ol>
+<li>Zaharia, Matei, et al. &quot;Spark: cluster computing with working sets.&quot; <em>HotCloud</em>10 (2010): 10-10.</li>
+<li>Zaharia, Matei, et al. &quot;Resilient distributed datasets: A fault-tolerant abstraction for in-memory cluster computing.&quot; <em>Proceedings of the 9th USENIX conference on Networked Systems Design and Implementation</em>. USENIX Association, 2012.</li>
+<li>Zaharia M, Chowdhury M, Franklin M J, et al. Spark: cluster computing with working sets[J]. HotCloud, 2010, 10: 10-10.</li>
+</ol></li>
+<li><strong>Graph Processing</strong>
+
+<ol>
+<li>Low, Yucheng, et al. &quot;Distributed GraphLab: a framework for machine learning and data mining in the cloud.&quot; <em>Proceedings of the VLDB Endowment</em>5.8 (2012): 716-727.</li>
+<li>Kyrola, Aapo, Guy Blelloch, and Carlos Guestrin. &quot;GraphChi: large-scale graph computation on just a PC.&quot; <em>Presented as part of the 10th USENIX Symposium on Operating Systems Design and Implementation (OSDI 12)</em>. 2012.</li>
+<li>Malewicz, Grzegorz, et al. &quot;Pregel: a system for large-scale graph processing.&quot; <em>Proceedings of the 2010 ACM SIGMOD International Conference on Management of data</em>. ACM, 2010.</li>
+<li>Low, Yucheng, et al. &quot;Graphlab: A new framework for parallel machine learning.&quot; <em>arXiv preprint arXiv:1408.2041</em> (2014).</li>
+</ol></li>
+<li><strong>Streaming data proccesing</strong>
+
+<ol>
+<li>Toshniwal, Ankit, et al. &quot;Storm@ twitter.&quot; <em>Proceedings of the 2014 ACM SIGMOD international conference on Management of data</em>. ACM, 2014.</li>
+<li>Zaharia, Matei, et al. &quot;Discretized streams: an efficient and fault-tolerant model for stream processing on large clusters.&quot; <em>Presented as part of the</em>. 2012.</li>
+<li>Zaharia, Matei, et al. &quot;Discretized streams: Fault-tolerant streaming computation at scale.&quot; <em>Proceedings of the Twenty-Fourth ACM Symposium on Operating Systems Principles</em>. ACM, 2013.</li>
+<li>Namiot, Dmitry. &quot;On Big Data Stream Processing.&quot; <em>International Journal of Open Information Technologies</em> 3.8 (2015): 48-51.</li>
+</ol></li>
+<li><strong>Big Data Machine Learning System</strong>
+
+<ol>
+<li>Meng, Xiangrui, et al. &quot;Mllib: Machine learning in apache spark.&quot; <em>JMLR</em> 17.34 (2016): 1-7.</li>
+<li>Lin, Jimmy, and Alek Kolcz. &quot;Large-scale machine learning at twitter.&quot;<em>Proceedings of the 2012 ACM SIGMOD International Conference on Management of Data</em>. ACM, 2012.</li>
+<li>Wu X, Zhu X, Wu G Q, et al. Data mining with big data[J]. IEEE transactions on knowledge and data engineering, 2014, 26(1): 97-107.</li>
+<li>Fan W, Bifet A. Mining big data: current status, and forecast to the future[J]. ACM sIGKDD Explorations Newsletter, 2013, 14(2): 1-5.</li>
+</ol></li>
+<li><strong>Deep learning</strong>
+
+<ol>
+<li>LeCun, Yann, Yoshua Bengio, and Geoffrey Hinton. &quot;Deep learning.&quot; <em>Nature</em>521.7553 (2015): 436-444.</li>
+<li>Silver, David, et al. &quot;Mastering the game of Go with deep neural networks and tree search.&quot; <em>Nature</em> <a href="tel:529.7587">529.7587</a> (2016): 484-489.</li>
+<li>LeCun Y, Bengio Y, Hinton G. Deep learning[J]. Nature, 2015, 521(7553): 436-444.</li>
+<li>Schmidhuber J. Deep learning in neural networks: An overview[J]. Neural Networks, 2015, 61: 85-117.</li>
+</ol></li>
+<li><strong>NoSQL</strong>
+
+<ol>
+<li>Chang, Fay, et al. &quot;Bigtable: A distributed storage system for structured data.&quot;<em>ACM Transactions on Computer Systems (TOCS)</em> 26.2 (2008): 4.</li>
+<li>DeCandia, Giuseppe, et al. &quot;Dynamo: amazon&#39;s highly available key-value store.&quot; <em>ACM SIGOPS Operating Systems Review</em> 41.6 (2007): 205-220.</li>
+<li>Lakshman, Avinash, and Prashant Malik. &quot;Cassandra: a decentralized structured storage system.&quot; <em>ACM SIGOPS Operating Systems Review</em> 44.2 (2010): 35-40.</li>
+<li>Cattell, Rick. &quot;Scalable SQL and NoSQL data stores.&quot; <em>Acm Sigmod Record</em>39.4 (2011): 12-27.</li>
+</ol></li>
+<li><strong>Distributed File System: GFS and HDFS</strong>
+
+<ol>
+<li>Ghemawat, Sanjay, Howard Gobioff, and Shun-Tak Leung. &quot;The Google file system.&quot; <em>ACM SIGOPS operating systems review</em>. Vol. 37. No. 5. ACM, 2003.</li>
+<li>Shvachko, Konstantin, et al. &quot;The hadoop distributed file system.&quot; <em>2010 IEEE 26th symposium on mass storage systems and technologies (MSST)</em>. IEEE, 2010.</li>
+<li>Lakshman, Avinash, and Prashant Malik. &quot;Cassandra: a decentralized structured storage system.&quot; <em>ACM SIGOPS Operating Systems Review</em> 44.2 (2010): 35-40.</li>
+</ol></li>
+<li><strong>Cloud Computing</strong>
+
+<ol>
+<li>Armbrust, Michael, et al. &quot;Above the clouds: A berkeley view of cloud computing.&quot; (2009).</li>
+<li>Foster, Ian, et al. &quot;Cloud computing and grid computing 360-degree compared.&quot; <em>2008 Grid Computing Environments Workshop</em>. Ieee, 2008.</li>
+<li>Cooper, Brian F., et al. &quot;Benchmarking cloud serving systems with YCSB.&quot;<em>Proceedings of the 1st ACM symposium on Cloud computing</em>. ACM, 2010.</li>
+</ol></li>
+<li><strong>Resource Allocation and Management</strong>
+
+<ol>
+<li>Hindman, Benjamin, et al. &quot;Mesos: A Platform for Fine-Grained Resource Sharing in the Data Center.&quot; <em>NSDI</em>. Vol. 11. 2011.</li>
+<li>Vavilapalli, Vinod Kumar, et al. &quot;Apache hadoop yarn: Yet another resource negotiator.&quot; <em>Proceedings of the 4th annual Symposium on Cloud Computing</em>. ACM, 2013.</li>
+<li>Hunt, Patrick, et al. &quot;ZooKeeper: Wait-free Coordination for Internet-scale Systems.&quot; <em>USENIX Annual Technical Conference</em>. Vol. 8. 2010.</li>
+</ol></li>
+<li><strong>Full-stack Big Data System</strong>
+
+<ol>
+<li>Franklin, Matthew. &quot;The berkeley data analytics stack: Present and future.&quot;<em>Big Data, 2013 IEEE International Conference on</em>. IEEE, 2013.</li>
+<li>Zaharia, Matei, et al. &quot;Fast and interactive analytics over Hadoop data with Spark.&quot; <em>USENIX Login</em> 37.4 (2012): 45-51.</li>
+</ol></li>
+<li><strong>Data Visualization System</strong>
+
+<ol>
+<li>Schroeder W J, Lorensen B, Martin K. The visualization toolkit[M]. Kitware, 2004.</li>
+<li>Bertini E, Tatu A, Keim D. Quality metrics in high-dimensional data visualization: An overview and systematization[J]. IEEE Transactions on Visualization and Computer Graphics, 2011, 17(12): <a href="tel:2203-2212">2203-2212</a>.</li>
+<li>Kehrer J, Hauser H. Visualization and visual analysis of multifaceted scientific data: A survey[J]. IEEE transactions on visualization and computer graphics, 2013, 19(3): 495-513.</li>
+<li>Etemadpour R, Motta R, de Souza Paiva J G, et al. Perception-based evaluation of projection methods for multidimensional data visualization[J]. IEEE transactions on visualization and computer graphics, 2015, 21(1): 81-94.</li>
+</ol></li>
+<li><strong>Recommendation System</strong>
+
+<ol>
+<li>McDonald D W, Ackerman M S. Expertise recommender: a flexible recommendation system and architecture[C]//Proceedings of the 2000 ACM conference on Computer supported cooperative work. ACM, 2000: 231-240.</li>
+<li>Davidson J, Liebald B, Liu J, et al. The YouTube video recommendation system[C]//Proceedings of the fourth ACM conference on Recommender systems. ACM, 2010: 293-296.</li>
+<li>Mo Y, Chen J, Xie X, et al. Cloud-based mobile multimedia recommendation system with user behavior information[J]. IEEE Systems Journal, 2014, 8(1): 184-193.</li>
+<li>Phelan O, McCarthy K, Smyth B. Using twitter to recommend real-time topical news[C]//Proceedings of the third ACM conference on Recommender systems. ACM, 2009: 385-388.</li>
+</ol></li>
+</ol>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Ubuntu 14.04 Spark单机环境搭建与初步学习]]></title>
